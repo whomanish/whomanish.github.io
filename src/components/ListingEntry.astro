@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  displayDate: string;
+  date: string;
+  description: string;
+  url: string;
+  linkLabel: "Read more" | "View case study";
+  linkedTitle?: boolean;
+}
+
+const { title, displayDate, date, description, url, linkLabel, linkedTitle = false } = Astro.props;
+---
+
+<article class="entry">
+  <div class="entry-heading">
+    <h2>
+      {linkedTitle ? <a href={url} target="_blank" rel="noopener noreferrer">{title}</a> : title}
+    </h2>
+    <time datetime={date}>{displayDate}</time>
+  </div>
+  <p>{description} <a href={url} target="_blank" rel="noopener noreferrer">{linkLabel}</a></p>
+</article>
+

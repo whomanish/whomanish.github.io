@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import ListingEntry from "../../components/ListingEntry.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const caseStudies = (await getCollection("caseStudies")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Case Studies | Manish Jha"
+  description="Independent product case studies by Manish Jha."
+  current="case-studies"
+>
+  <h1 class="page-title">Case Studies</h1>
+  <p class="lede">Personal projects and independent case studies created outside my employment.</p>
+  <section aria-label="Independent case studies">
+    {caseStudies.map(({ data }) => (
+      <ListingEntry {...data} linkLabel="View case study" />
+    ))}
+  </section>
+</BaseLayout>

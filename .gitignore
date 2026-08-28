@@ -1,0 +1,22 @@
+# Installed packages and generated website files
+node_modules/
+dist/
+.astro/
+
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+
+# Private or temporary material
+private/
+drafts/
+*.zip
+*.tmp
+*.log
+
+# macOS and editor files
+.DS_Store
+.idea/
+.vscode/
+
