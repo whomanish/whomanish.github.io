@@ -114,7 +114,7 @@ The normal publishing loop will be:
 5. Push the `main` branch to GitHub.
 6. GitHub Pages publishes the new version automatically.
 
-The final GitHub address and custom domain still need to be added to `astro.config.mjs` before the first public deployment.
+The initial public address is `https://whomanish.github.io`. When a custom domain is selected, update the `site` value in `astro.config.mjs` and add the domain to `public/CNAME`.
 
 ## Dependency updates
 
