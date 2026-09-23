@@ -80,6 +80,41 @@ The rest of the article.
 
 Do not add a `url` field to an on-site article. The website creates its URL from the filename.
 
+### Add graphics to an on-site article
+
+Keep each article's graphics in its own folder under `src/assets/writeups/`. Name that folder exactly like the article's Markdown filename. Use short lowercase image filenames with hyphens.
+
+For example:
+
+```text
+src/
+├── assets/
+│   └── writeups/
+│       └── a-clear-article-title/
+│           └── workflow-diagram.png
+└── content/
+    └── writeups/
+        └── a-clear-article-title.md
+```
+
+Add the image to the article using a relative path:
+
+```markdown
+![Diagram showing the release-documentation workflow](../../assets/writeups/a-clear-article-title/workflow-diagram.png)
+```
+
+The words inside the square brackets are alternative text. They should communicate the image's meaning to someone who cannot see it. Do not begin with “Image of” or repeat a nearby caption. If a graphic is purely decorative and adds no information, use empty brackets: `![](...)`.
+
+Astro processes local images stored in `src/assets/`, including resizing them for the page. The site also prevents them from overflowing on smaller screens. Prefer PNG for screenshots and diagrams with text, SVG for simple diagrams you created and own and JPEG or WebP for photographs. Remove confidential names, data and interface details before adding any image.
+
+A caption is optional. Put this directly after the image when context or attribution would help:
+
+```html
+<p class="article-caption">A short caption explaining what the reader should notice.</p>
+```
+
+Use both meaningful alternative text and a caption when they serve different purposes. Alternative text describes the information in the graphic. A caption explains why it matters in the article. Check every graphic in the local preview at both a wide desktop size and a narrow phone size before publishing.
+
 ### Add an externally published article
 
 Follow the same steps but include the external destination in the frontmatter and do not add an article body:

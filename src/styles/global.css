@@ -240,6 +240,28 @@ blockquote {
   margin-top: 3rem;
 }
 
+.article-content img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto 0;
+  border: 1px solid var(--line);
+}
+
+.article-content p:has(> img:only-child) {
+  margin-bottom: 0;
+}
+
+.article-caption {
+  margin: 0.65rem auto 2rem;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
 .role {
   padding-block: 1.5rem;
   border-top: 1px solid var(--line);
