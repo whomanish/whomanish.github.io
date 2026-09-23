@@ -47,12 +47,17 @@ Keep the existing heading order:
 
 ## Add a Writeup
 
+Writeups can either live on this website or link to an article published elsewhere. New original articles should normally live on this website. The older Medium archive remains external.
+
+### Publish a complete article on this website
+
 1. Open `src/content/writeups/`.
-2. Duplicate an existing Markdown file.
-3. Give the duplicate a short lowercase filename with hyphens.
+2. Duplicate an on-site article Markdown file.
+3. Give the duplicate a short lowercase filename with hyphens. The filename becomes the public URL.
 4. Replace every frontmatter value with the new article's information.
-5. Give it the next `order` number or adjust the existing numbers to control the display order.
-6. Save the file and check the Writeups page locally.
+5. Paste the article below the closing `---` line using Markdown headings that begin with `##`.
+6. Give it the next `order` number or adjust the existing numbers to control the display order.
+7. Save the file and check both the Writeups index and the full article page locally.
 
 Example:
 
@@ -64,11 +69,34 @@ date: "2026-09-04"
 order: 1
 description: >-
   A short excerpt that gives the reader a reason to continue.
+---
+
+Opening paragraph of the article.
+
+## First section
+
+The rest of the article.
+```
+
+Do not add a `url` field to an on-site article. The website creates its URL from the filename.
+
+### Add an externally published article
+
+Follow the same steps but include the external destination in the frontmatter and do not add an article body:
+
+```markdown
+---
+title: "An externally published article"
+displayDate: "4 September 2026"
+date: "2026-09-04"
+order: 1
+description: >-
+  A short excerpt that gives the reader a reason to continue.
 url: "https://example.com/article"
 ---
 ```
 
-`displayDate` is the date visitors see. `date` is the machine-readable version. `order` controls the position on the page.
+External articles open in a new tab. On-site articles open normally within the website. `displayDate` is the date visitors see. `date` is the machine-readable version. `order` controls the position on the Writeups page.
 
 ## Add a Case Study
 

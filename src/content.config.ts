@@ -15,18 +15,21 @@ const listingSchema = z.object({
   displayDate: z.string(),
   date: z.string(),
   order: z.number().int().positive(),
-  description: z.string(),
-  url: z.url()
+  description: z.string()
 });
 
 const writeups = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/writeups" }),
-  schema: listingSchema
+  schema: listingSchema.extend({
+    url: z.url().optional()
+  })
 });
 
 const caseStudies = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/case-studies" }),
-  schema: listingSchema
+  schema: listingSchema.extend({
+    url: z.url()
+  })
 });
 
 export const collections = { pages, writeups, caseStudies };

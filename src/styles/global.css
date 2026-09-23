@@ -211,6 +211,35 @@ blockquote {
   margin-bottom: 0;
 }
 
+.article-content {
+  max-width: 68ch;
+}
+
+.article-back {
+  margin-bottom: 1.6rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+}
+
+.article-header {
+  margin-bottom: 2.8rem;
+}
+
+.article-header h1 {
+  margin-bottom: 0.6rem;
+}
+
+.article-header time {
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.article-content h2 {
+  margin-top: 3rem;
+}
+
 .role {
   padding-block: 1.5rem;
   border-top: 1px solid var(--line);

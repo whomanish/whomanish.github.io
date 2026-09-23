@@ -7,18 +7,18 @@ interface Props {
   url: string;
   linkLabel: "Read more" | "View case study";
   linkedTitle?: boolean;
+  external?: boolean;
 }
 
-const { title, displayDate, date, description, url, linkLabel, linkedTitle = false } = Astro.props;
+const { title, displayDate, date, description, url, linkLabel, linkedTitle = false, external = true } = Astro.props;
 ---
 
 <article class="entry">
   <div class="entry-heading">
     <h2>
-      {linkedTitle ? <a href={url} target="_blank" rel="noopener noreferrer">{title}</a> : title}
+      {linkedTitle ? <a href={url} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>{title}</a> : title}
     </h2>
     <time datetime={date}>{displayDate}</time>
   </div>
-  <p>{description} <a href={url} target="_blank" rel="noopener noreferrer">{linkLabel}</a></p>
+  <p>{description} <a href={url} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined}>{linkLabel}</a></p>
 </article>
-

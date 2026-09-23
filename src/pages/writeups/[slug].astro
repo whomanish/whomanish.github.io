@@ -1,0 +1,38 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("writeups", ({ data }) => !data.url);
+
+  return articles.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry }
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<"writeups">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(`${base}writeups/${entry.id}/`, Astro.site).toString();
+---
+
+<BaseLayout
+  title={`${entry.data.title} | Manish Jha`}
+  description={entry.data.description}
+  current="writeups"
+  canonical={canonical}
+>
+  <article class="article-content">
+    <p class="article-back"><a href={`${base}writeups/`}>Back to Writeups</a></p>
+    <header class="article-header">
+      <h1>{entry.data.title}</h1>
+      <time datetime={entry.data.date}>{entry.data.displayDate}</time>
+    </header>
+    <Content />
+  </article>
+</BaseLayout>
