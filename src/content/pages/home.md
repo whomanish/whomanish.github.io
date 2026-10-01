@@ -31,3 +31,5 @@ I enjoy working on ambiguous problems where product strategy, technology and com
 I spend a lot of time these days building reusable agent skills and AI agents and experimenting with vibe coding. Token efficiency, instruction conflicts, workflow latency and AI-native UX are the areas I’m thinking most deeply about today. If you’re working on or thinking about any of these, I’d love to exchange notes.
 
 Connect with me on <a href="https://www.linkedin.com/in/whomanish/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, <a href="https://x.com/whomanish" target="_blank" rel="noopener noreferrer">X</a> or email me at <a href="mailto:mkwhomanish@gmail.com">mkwhomanish<span>@</span>gmail.com</a>.
+
+Check out my side projects <a href="https://github.com/whomanish" target="_blank" rel="noopener noreferrer">here</a>.
